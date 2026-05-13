@@ -1,0 +1,128 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark-navy);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  font-family: var(--font-en);
+  font-size: 14px;
+  color: var(--dark-navy);
+  transition: color 0.15s;
+}
+
+.link:hover {
+  color: var(--brand-red);
+}
+
+.contactBtn {
+  padding: 8px 20px;
+  border: 1px solid var(--brand-red);
+  border-radius: var(--radius-sm);
+  color: var(--brand-red);
+  font-family: var(--font-en);
+  font-size: 14px;
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.contactBtn:hover {
+  background: var(--brand-red);
+  color: var(--white);
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark-navy);
+  transition: transform 0.2s, opacity 0.2s;
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--light-border);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    z-index: 99;
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--light-border);
+  }
+
+  .contactBtn {
+    margin: 16px 24px;
+  }
+}
