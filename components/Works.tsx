@@ -5,7 +5,7 @@ import styles from "./Works.module.css";
 type Work = {
   title: string;
   image: string;
-  category: string;
+  tagline: string;
   description: string;
   url: string;
 };
@@ -14,7 +14,7 @@ const works: Work[] = [
   {
     title: "お菊神社",
     image: "/works/okiku.png",
-    category: "Web App",
+    tagline: "おみくじWebアプリ",
     description:
       "おみくじアプリが作れたら友達に自慢できると思い、AIを使って勢いで制作。コーディング未経験からChatGPT×Google AI Studioを組み合わせ、Vercelで公開まで完結させた1作目。",
     url: "https://okiku-omikuji-ponzus-projects-900a8ab4.vercel.app/",
@@ -22,7 +22,7 @@ const works: Work[] = [
   {
     title: "飯コン",
     image: "/works/meshicon.png",
-    category: "Web App",
+    tagline: "夜ごはん提案アプリ",
     description:
       "お腹は空いてるのに何食べたいかわからない、そんな自分の悩みをそのままアプリにした。外食ルートなら実際の店舗とおすすめメニューまで、自炊ルートなら料理名から調理方法まで丁寧に提案。自炊・外食の分岐や質問数の調整など、使い勝手にもこだわって作った2作目。",
     url: "https://meshicon-ponzus-projects-900a8ab4.vercel.app/",
@@ -30,15 +30,15 @@ const works: Work[] = [
   {
     title: "お菊のベネズエラ分析",
     image: "/works/venezuela.png",
-    category: "Website",
+    tagline: "WBC選手データまとめサイト",
     description:
       "WBCを熱中して見ていたけど、対戦相手のベネズエラ代表の選手データをまとめているサイトがなかったから自分で作った。ただAIに任せたデータ収集で推定値が混入してしまい、試合を見ながら誤りに気づくという失敗も。「作って気づいた」が一番の学びだった。",
     url: "https://venezuela-wbc-git-claude-dating-028db2-ponzus-projects-900a8ab4.vercel.app/",
   },
   {
-    title: "めんどくさい彼ゲーム",
+    title: '拒否デート侍"ムリオ"',
     image: "/works/lovegame.png",
-    category: "Web Game",
+    tagline: "恋愛シミュレーションゲーム",
     description:
       "若い女性向けに恋愛シミュレーションゲームを作ったらバズるんじゃないかと思って制作。チャット形式で気軽に遊べる設計にしつつ、理不尽な展開だらけの高難易度にすることで「無理ゲー」として話題になることを狙った。",
     url: "https://ponzu-xc90.github.io/love_simulation/",
@@ -46,7 +46,7 @@ const works: Work[] = [
   {
     title: "日本代表観戦ガイド2026",
     image: "/works/worldcup.png",
-    category: "Website",
+    tagline: "W杯日本代表情報サイト",
     description:
       "W杯が楽しみなのに細かい選手データがまとまっているサイトがなかったから自分で作ることにした。ベネズエラ分析サイトでのデータ誤りの反省を活かし、データ取得できない場合は明示・別手段で再取得・それでも無理なら手動収集という方針を自分で決めて運用。ChatGPTのディープリサーチとClaude Codeを組み合わせてデータ収集・開発を実施。現在も更新中。",
     url: "https://worldcup-japan-2026.vercel.app/",
@@ -76,7 +76,7 @@ export default function Works() {
                 />
               </div>
               <div className={styles.body}>
-                <span className={styles.category}>{work.category}</span>
+                <p className={styles.tagline}>{work.tagline}</p>
                 <h3 className={styles.cardTitle}>{work.title}</h3>
                 <p className={styles.desc}>{work.description}</p>
                 <a

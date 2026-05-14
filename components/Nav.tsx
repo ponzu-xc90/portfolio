@@ -13,9 +13,8 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.inner}>
-        {/* TODO: 名前が決まったら YOURNAME を変更 */}
         <Link href="/" className={styles.logo} onClick={close}>
-          YOURNAME
+          菊地　秀平
         </Link>
 
         <div className={`${styles.links} ${menuOpen ? styles.open : ""}`}>

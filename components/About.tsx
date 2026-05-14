@@ -27,8 +27,7 @@ export default function About() {
 
         <div className={styles.columns}>
           <div className={styles.left}>
-            {/* TODO: 名前が決まったら "Your Name" を変更 */}
-            <h3 className={styles.name}>Your Name</h3>
+            <h3 className={styles.name}>菊地　秀平</h3>
             <p className={styles.bio}>
               お笑い芸人として活動しながら、AIを活用したWebサービス・アプリの開発を独学で行っています。笑いの感覚とAIを掛け合わせた、他にない視点でモノを作ることが好きです。現在はマーケ・企画系職種での転職活動中。
             </p>

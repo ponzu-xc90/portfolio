@@ -9,13 +9,13 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.inner}>
         <h1 className={styles.heading}>
-          Marketing <span className={styles.accent}>×</span> AI.
+          Humor <span className={styles.accent}>×</span> Logic <span className={styles.accent}>×</span> AI.
         </h1>
         <p className={styles.subheading}>
-          お笑い×AI活用ができる、マーケ・企画人材
+          ビジネスの現場に、新しい発想と視点を持ち込む人材
         </p>
         <p className={styles.description}>
-          お笑い芸人として培った企画力・ゼロイチで形にする力・人を動かす表現力と、AIを活用したWebサービス制作の実績を持つビジネス人材です。アイデアを実際に動くものとして、素早く届けることが得意です。
+          お笑い芸人として3年間培った人の感情を動かす経験・マーケティング業務で身につけた論理思考／分析力・そして創作を通じてAIを学んできた実行力。人間ならではの発想力・ユーモアを活かしてAI時代に適応する価値を提供します。
         </p>
         <ul className={styles.tags}>
           {tags.map((tag) => (
