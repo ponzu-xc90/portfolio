@@ -21,9 +21,6 @@ export default function Nav() {
           <Link href="#works" className={styles.link} onClick={close}>
             Works
           </Link>
-          <Link href="#story" className={styles.link} onClick={close}>
-            Story
-          </Link>
           <Link href="#about" className={styles.link} onClick={close}>
             About
           </Link>
