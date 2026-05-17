@@ -34,6 +34,8 @@
 .subtitle {
   font-size: 14px;
   color: var(--medium-gray);
+  line-height: 1.9;
+  max-width: 640px;
 }
 
 .grid {
@@ -47,6 +49,8 @@
   border: 1px solid var(--light-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .thumbnail {
@@ -54,10 +58,14 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .body {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .tagline {
@@ -70,15 +78,92 @@
 .cardTitle {
   font-weight: 700;
   font-size: 15px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: var(--dark-navy);
+}
+
+/* ---- 概要・詳細ラベル ---- */
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--brand-red);
 }
 
 .desc {
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--medium-gray);
-  margin-bottom: 14px;
+}
+
+/* ---- アコーディオン詳細エリア ---- */
+
+.detailSection {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--light-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailText {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--medium-gray);
+  white-space: pre-line;
+}
+
+/* ---- AI活用タグ ---- */
+
+.aiTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.aiTag {
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--dark-navy);
+  white-space: nowrap;
+}
+
+/* ---- カードフッター ---- */
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid var(--light-border);
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: var(--medium-gray);
+  font-size: 12px;
+  font-family: var(--font-jp);
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.toggleBtn:hover {
+  color: var(--dark-navy);
 }
 
 .link {
@@ -86,6 +171,7 @@
   font-size: 13px;
   font-family: var(--font-en);
   transition: opacity 0.15s;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -105,5 +191,9 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .subtitle {
+    font-size: 13px;
   }
 }
