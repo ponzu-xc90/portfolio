@@ -11,10 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // TODO: 名前が決まったら title・description を変更
-  title: "Portfolio — Marketing × AI",
+  title: "菊地 秀平 | Portfolio",
   description:
-    "お笑い×AI活用ができる、マーケ・企画人材のポートフォリオです。AIを活用したWebサービス制作の実績多数。",
+    "発想力×論理思考×AIで、ビジネスの現場に新しい視点を持ち込む人材・菊地秀平のポートフォリオです。",
 };
 
 export default function RootLayout({

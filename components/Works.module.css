@@ -69,15 +69,16 @@
 }
 
 .tagline {
-  font-size: 12px;
-  color: var(--medium-gray);
+  font-size: 14px;
+  color: var(--dark-navy);
+  font-weight: 500;
   margin-bottom: 4px;
   font-family: var(--font-jp);
 }
 
 .cardTitle {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 19px;
   margin-bottom: 12px;
   color: var(--dark-navy);
 }
@@ -94,13 +95,13 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--brand-red);
+  color: var(--dark-navy);
 }
 
 .desc {
   font-size: 13px;
   line-height: 1.75;
-  color: var(--medium-gray);
+  color: var(--dark-navy);
 }
 
 /* ---- アコーディオン詳細エリア ---- */
@@ -147,14 +148,13 @@
   justify-content: space-between;
   margin-top: auto;
   padding-top: 14px;
-  margin-top: 14px;
   border-top: 1px solid var(--light-border);
 }
 
 .toggleBtn {
   background: none;
   border: none;
-  color: var(--medium-gray);
+  color: var(--dark-navy);
   font-size: 12px;
   font-family: var(--font-jp);
   padding: 0;

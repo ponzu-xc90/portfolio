@@ -123,20 +123,21 @@
   color: var(--medium-gray);
 }
 
-/* Lightbox */
+/* Modal */
 
-.lightbox {
+.modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.88);
   display: flex;
-  align-items: center;
   justify-content: center;
   z-index: 1000;
-  cursor: zoom-out;
+  cursor: pointer;
+  overflow-y: auto;
+  padding: 64px 16px 48px;
 }
 
-.lightboxClose {
+.modalClose {
   position: fixed;
   top: 20px;
   right: 24px;
@@ -152,15 +153,31 @@
   padding: 4px;
 }
 
-.lightboxClose:hover {
+.modalClose:hover {
   opacity: 1;
 }
 
-.lightboxContent {
+.modalContent {
   cursor: default;
+  width: 100%;
+  max-width: 600px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  align-self: flex-start;
+}
+
+.modalTitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.modalImages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* Responsive */

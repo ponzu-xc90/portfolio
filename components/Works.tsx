@@ -180,8 +180,8 @@ export default function Works() {
     <section id="works" className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <p className={styles.label}>02 / Works</p>
-          <h2 className={styles.title}>自主制作・企画実験</h2>
+          <p className={styles.label}>03 / Works</p>
+          <h2 className={styles.title}>AI Projects</h2>
           <p className={styles.subtitle}>
             日常の違和感や興味を起点に、企画・構成・言語化・試作まで行った自主制作です。
             <br />

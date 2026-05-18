@@ -40,21 +40,16 @@ const works: ComedyWork[] = [
 ];
 
 export default function ComedyVisualization() {
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
-  const [lightboxAlt, setLightboxAlt] = useState<string>("");
+  const [selectedWork, setSelectedWork] = useState<ComedyWork | null>(null);
 
-  const openLightbox = (src: string, alt: string) => {
-    setLightboxSrc(src);
-    setLightboxAlt(alt);
-  };
-
-  const closeLightbox = () => setLightboxSrc(null);
+  const openModal = (work: ComedyWork) => setSelectedWork(work);
+  const closeModal = () => setSelectedWork(null);
 
   return (
     <section id="comedy" className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <p className={styles.label}>03 / Comedy Visualization</p>
+          <p className={styles.label}>02 / Comedy Visualization</p>
           <h2 className={styles.title}>コントを漫画形式で見せる試み</h2>
           <p className={styles.subtitle}>
             お笑い活動で制作したコント台本の一部を、AI画像生成を使って漫画形式で表現しました。
@@ -69,24 +64,19 @@ export default function ComedyVisualization() {
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{work.title}</h3>
 
-                <div className={styles.images}>
-                  {work.images.map((img) => (
-                    <button
-                      key={img.src}
-                      className={styles.imageWrapper}
-                      onClick={() => openLightbox(img.src, img.alt)}
-                      aria-label={`${img.alt}を拡大表示`}
-                    >
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        width={600}
-                        height={900}
-                        style={{ width: "100%", height: "auto", display: "block" }}
-                      />
-                    </button>
-                  ))}
-                </div>
+                <button
+                  className={styles.imageWrapper}
+                  onClick={() => openModal(work)}
+                  aria-label={`${work.title}の漫画を見る`}
+                >
+                  <Image
+                    src={work.images[0].src}
+                    alt={work.images[0].alt}
+                    width={600}
+                    height={900}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </button>
 
                 <div className={styles.commentary}>
                   <span className={styles.commentaryLabel}>解説</span>
@@ -104,35 +94,38 @@ export default function ComedyVisualization() {
         </ul>
       </div>
 
-      {lightboxSrc && (
+      {selectedWork && (
         <div
-          className={styles.lightbox}
-          onClick={closeLightbox}
+          className={styles.modal}
+          onClick={closeModal}
           role="dialog"
           aria-modal="true"
-          aria-label="画像拡大表示"
+          aria-label={`${selectedWork.title}の漫画`}
         >
           <button
-            className={styles.lightboxClose}
-            onClick={closeLightbox}
+            className={styles.modalClose}
+            onClick={closeModal}
             aria-label="閉じる"
           >
             ✕
           </button>
-          <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={lightboxSrc}
-              alt={lightboxAlt}
-              width={800}
-              height={1200}
-              style={{
-                maxWidth: "90vw",
-                maxHeight: "90vh",
-                width: "auto",
-                height: "auto",
-                display: "block",
-              }}
-            />
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className={styles.modalTitle}>{selectedWork.title}</h3>
+            <div className={styles.modalImages}>
+              {selectedWork.images.map((img) => (
+                <Image
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  width={800}
+                  height={1200}
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
