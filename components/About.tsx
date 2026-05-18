@@ -22,7 +22,7 @@ export default function About() {
     <section id="about" className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <p className={styles.label}>04 / About</p>
+          <p className={styles.label}>05 / About</p>
           <h2 className={styles.title}>About me.</h2>
         </header>
 

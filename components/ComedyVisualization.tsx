@@ -50,7 +50,7 @@ export default function ComedyVisualization() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.label}>02 / Comedy Visualization</p>
-          <h2 className={styles.title}>創作物紹介</h2>
+          <h2 className={styles.title}>Creative Idea</h2>
           <p className={styles.subtitle}>
             お笑い活動で制作したコント台本の一部を、AI画像生成を使って漫画形式で表現しました。
             <br />
@@ -72,9 +72,9 @@ export default function ComedyVisualization() {
                   <Image
                     src={work.images[0].src}
                     alt={work.images[0].alt}
-                    width={600}
-                    height={900}
-                    style={{ width: "100%", height: "auto", display: "block" }}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
                   />
                 </button>
 
