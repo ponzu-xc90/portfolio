@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Works from "@/components/Works";
+import ComedyVisualization from "@/components/ComedyVisualization";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <main>
         <Hero />
         <Works />
+        <ComedyVisualization />
         <About />
       </main>
       <Footer />

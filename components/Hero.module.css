@@ -1,5 +1,5 @@
 .hero {
-  background: #DAEEFF;
+  background: var(--white);
   padding: 96px 0 112px;
 }
 
