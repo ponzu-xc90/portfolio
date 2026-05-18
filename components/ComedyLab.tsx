@@ -1,9 +1,4 @@
-import Image from "next/image";
 import styles from "./ComedyLab.module.css";
-
-const slides = [
-  { src: "/images/comedy-lab/slide-01.png", alt: "笑いの仕組み図①" },
-];
 
 export default function ComedyLab() {
   return (
@@ -18,18 +13,11 @@ export default function ComedyLab() {
         </header>
 
         <div className={styles.slides}>
-          {slides.map((slide) => (
-            <div key={slide.src} className={styles.slideWrapper}>
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                width={1800}
-                height={1200}
-                quality={100}
-                className={styles.slideImage}
-              />
-            </div>
-          ))}
+          <img
+            src="/images/comedy-lab/slide-01.svg"
+            alt="笑いの仕組み図①"
+            style={{ width: "100%", maxWidth: "900px", height: "auto", display: "block", margin: "0 auto" }}
+          />
         </div>
       </div>
     </section>
