@@ -25,6 +25,7 @@ export default function ComedyLab() {
                 alt={slide.alt}
                 width={1800}
                 height={1200}
+                quality={100}
                 className={styles.slideImage}
               />
             </div>
