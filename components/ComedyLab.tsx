@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./ComedyLab.module.css";
 
 const slides = [
-  { src: "/images/comedy-lab/slide-01.jpg", alt: "笑いの仕組み図①" },
+  { src: "/images/comedy-lab/slide-01.png", alt: "笑いの仕組み図①" },
 ];
 
 export default function ComedyLab() {
