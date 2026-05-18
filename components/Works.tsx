@@ -100,7 +100,7 @@ const works: Work[] = [
 ];
 
 function WorkCard({ work }: { work: Work }) {
-  const [open, setOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <li className={styles.card}>
@@ -122,44 +122,12 @@ function WorkCard({ work }: { work: Work }) {
           <p className={styles.desc}>{work.description}</p>
         </div>
 
-        {open && (
-          <div className={styles.detailSection}>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>制作意図</span>
-              <p className={styles.detailText}>{work.intent}</p>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>狙い</span>
-              <p className={styles.detailText}>{work.aim}</p>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>工夫した点</span>
-              <p className={styles.detailText}>{work.ingenuity}</p>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>AI活用</span>
-              <ul className={styles.aiTagList}>
-                {work.aiTools.map((tool) => (
-                  <li key={tool} className={styles.aiTag}>
-                    {tool}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>振り返り</span>
-              <p className={styles.detailText}>{work.reflection}</p>
-            </div>
-          </div>
-        )}
-
         <div className={styles.cardFooter}>
           <button
             className={styles.toggleBtn}
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
+            onClick={() => setModalOpen(true)}
           >
-            {open ? "閉じる ▲" : "詳細を見る ▼"}
+            詳細を見る ▼
           </button>
           <a
             href={work.url}
@@ -171,6 +139,61 @@ function WorkCard({ work }: { work: Work }) {
           </a>
         </div>
       </div>
+
+      {modalOpen && (
+        <div
+          className={styles.modal}
+          onClick={() => setModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${work.title}の詳細`}
+        >
+          <button
+            className={styles.modalClose}
+            onClick={() => setModalOpen(false)}
+            aria-label="閉じる"
+          >
+            ✕
+          </button>
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className={styles.modalHeader}>
+              <p className={styles.modalTagline}>{work.tagline}</p>
+              <h3 className={styles.modalTitle}>{work.title}</h3>
+            </div>
+            <div className={styles.modalBody}>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>制作意図</span>
+                <p className={styles.detailText}>{work.intent}</p>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>狙い</span>
+                <p className={styles.detailText}>{work.aim}</p>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>工夫した点</span>
+                <p className={styles.detailText}>{work.ingenuity}</p>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>AI活用</span>
+                <ul className={styles.aiTagList}>
+                  {work.aiTools.map((tool) => (
+                    <li key={tool} className={styles.aiTag}>
+                      {tool}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>振り返り</span>
+                <p className={styles.detailText}>{work.reflection}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </li>
   );
 }

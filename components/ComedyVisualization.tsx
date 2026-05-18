@@ -50,7 +50,7 @@ export default function ComedyVisualization() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.label}>02 / Comedy Visualization</p>
-          <h2 className={styles.title}>コントを漫画形式で見せる試み</h2>
+          <h2 className={styles.title}>創作物紹介</h2>
           <p className={styles.subtitle}>
             お笑い活動で制作したコント台本の一部を、AI画像生成を使って漫画形式で表現しました。
             <br />
@@ -122,7 +122,7 @@ export default function ComedyVisualization() {
                   alt={img.alt}
                   width={800}
                   height={1200}
-                  style={{ width: "100%", height: "auto", display: "block" }}
+                  className={styles.modalImage}
                 />
               ))}
             </div>

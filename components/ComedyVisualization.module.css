@@ -44,7 +44,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Card */
@@ -54,12 +54,15 @@
   border: 1px solid var(--light-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardBody {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .cardTitle {
@@ -102,6 +105,7 @@
   gap: 6px;
   padding-top: 16px;
   border-top: 1px solid var(--light-border);
+  margin-top: auto;
 }
 
 .commentaryLabel {
@@ -120,7 +124,7 @@
 .commentaryPara {
   font-size: 13px;
   line-height: 1.85;
-  color: var(--medium-gray);
+  color: var(--dark-navy);
 }
 
 /* Modal */
@@ -177,7 +181,15 @@
 .modalImages {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+
+.modalImage {
+  width: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
 }
 
 /* Responsive */
