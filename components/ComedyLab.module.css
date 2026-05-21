@@ -60,6 +60,13 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+.thumbnailArea {
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
 .thumbnail {
   width: 100%;
   height: auto;

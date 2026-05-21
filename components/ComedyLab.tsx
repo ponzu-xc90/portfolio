@@ -12,7 +12,11 @@ const slides = [
   {
     id: 2,
     title: "フリの理論",
-    pages: ["/images/comedy-lab/slide-02-p1.svg"],
+    pages: [
+      "/images/comedy-lab/slide-02-p1.svg",
+      "/images/comedy-lab/slide-02-p2.svg",
+      "/images/comedy-lab/slide-02-p3.svg",
+    ],
   },
 ];
 
@@ -38,11 +42,16 @@ export default function ComedyLab() {
               onClick={() => setActiveSlide(slide)}
               aria-label={`${slide.title}を開く`}
             >
-              <img
-                src={slide.pages[0]}
-                alt={slide.title}
-                className={styles.thumbnail}
-              />
+              <div className={styles.thumbnailArea}>
+                {slide.pages.map((page, i) => (
+                  <img
+                    key={i}
+                    src={page}
+                    alt={`${slide.title} ${i + 1}ページ目`}
+                    className={styles.thumbnail}
+                  />
+                ))}
+              </div>
               <p className={styles.cardTitle}>{slide.title}</p>
             </button>
           ))}
