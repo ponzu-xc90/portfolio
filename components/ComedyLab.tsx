@@ -43,16 +43,21 @@ export default function ComedyLab() {
               aria-label={`${slide.title}を開く`}
             >
               <div className={styles.thumbnailArea}>
-                {slide.pages.map((page, i) => (
-                  <img
-                    key={i}
-                    src={page}
-                    alt={`${slide.title} ${i + 1}ページ目`}
-                    className={styles.thumbnail}
-                  />
-                ))}
+                <div
+                  className={
+                    slide.pages.length > 1 ? styles.scaleWrapper : styles.singleWrapper
+                  }
+                >
+                  {slide.pages.map((page, i) => (
+                    <img
+                      key={i}
+                      src={page}
+                      alt={`${slide.title} ${i + 1}ページ目`}
+                      className={styles.thumbnail}
+                    />
+                  ))}
+                </div>
               </div>
-              <p className={styles.cardTitle}>{slide.title}</p>
             </button>
           ))}
         </div>

@@ -46,13 +46,14 @@
 }
 
 .card {
-  background: #fff;
+  background: var(--light-surface);
   border: 1px solid var(--light-border);
   border-radius: var(--radius-md);
+  padding: 16px;
   cursor: pointer;
-  text-align: left;
-  padding: 0;
+  height: 500px;
   overflow: hidden;
+  text-align: left;
   transition: box-shadow 0.2s;
 }
 
@@ -61,23 +62,24 @@
 }
 
 .thumbnailArea {
-  height: 400px;
+  height: 100%;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+}
+
+.singleWrapper {
+  width: 100%;
+}
+
+.scaleWrapper {
+  transform: scale(0.55);
+  transform-origin: top center;
+  width: 100%;
 }
 
 .thumbnail {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.cardTitle {
-  font-weight: 700;
-  padding: 12px;
-  font-size: 14px;
-  color: var(--dark-navy);
 }
 
 /* Modal */
