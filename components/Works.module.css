@@ -116,10 +116,17 @@
   gap: 12px;
 }
 
+.modalDetailLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ff6b6b;
+}
+
 .detailText {
   font-size: 13px;
   line-height: 1.75;
-  color: var(--medium-gray);
+  color: var(--dark-navy);
   white-space: pre-line;
 }
 

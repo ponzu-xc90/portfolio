@@ -28,8 +28,8 @@ export default function Hero() {
             </li>
           ))}
         </ul>
-        <Link href="#works" className={styles.cta}>
-          Works を見る →
+        <Link href="#comedy" className={styles.cta}>
+          Creative Idea を見る →
         </Link>
       </div>
     </section>

@@ -22,7 +22,7 @@ const works: Work[] = [
     image: "/works/okiku.png",
     tagline: "おみくじWebアプリ",
     description:
-      "おみくじアプリが作れたら友達に自慢できると思い、AIを使って勢いで制作。コーディング未経験からChatGPT×Google AI Studioを組み合わせ、Vercelで公開まで完結させた1作目。",
+      "おみくじアプリが作れたら友達に自慢できると思い、AIを使って勢いで制作しました。コーディング未経験からChatGPT×Google AI Studioを組み合わせ、Vercelで公開まで完結させた1作目になります。",
     intent:
       "「とりあえず何かを作ってみて、友達に自慢したい」と思い、まずはシンプルな構成で気軽に試してもらえそうなおみくじアプリを制作しました。",
     aim: "くだらないおみくじを朝に引いてもらうことで、ほんの少しでも気分よく1日を始めてもらうことを狙いました。",
@@ -165,19 +165,19 @@ function WorkCard({ work }: { work: Work }) {
             </div>
             <div className={styles.modalBody}>
               <div className={styles.detailRow}>
-                <span className={styles.detailLabel}>制作意図</span>
+                <span className={styles.modalDetailLabel}>【制作意図】</span>
                 <p className={styles.detailText}>{work.intent}</p>
               </div>
               <div className={styles.detailRow}>
-                <span className={styles.detailLabel}>狙い</span>
+                <span className={styles.modalDetailLabel}>【狙い】</span>
                 <p className={styles.detailText}>{work.aim}</p>
               </div>
               <div className={styles.detailRow}>
-                <span className={styles.detailLabel}>工夫した点</span>
+                <span className={styles.modalDetailLabel}>【工夫した点】</span>
                 <p className={styles.detailText}>{work.ingenuity}</p>
               </div>
               <div className={styles.detailRow}>
-                <span className={styles.detailLabel}>AI活用</span>
+                <span className={styles.modalDetailLabel}>【AI活用】</span>
                 <ul className={styles.aiTagList}>
                   {work.aiTools.map((tool) => (
                     <li key={tool} className={styles.aiTag}>
@@ -187,7 +187,7 @@ function WorkCard({ work }: { work: Work }) {
                 </ul>
               </div>
               <div className={styles.detailRow}>
-                <span className={styles.detailLabel}>振り返り</span>
+                <span className={styles.modalDetailLabel}>【振り返り】</span>
                 <p className={styles.detailText}>{work.reflection}</p>
               </div>
             </div>

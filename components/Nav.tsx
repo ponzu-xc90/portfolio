@@ -18,18 +18,21 @@ export default function Nav() {
         </Link>
 
         <div className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
+          <Link href="#comedy" className={styles.link} onClick={close}>
+            Comedy
+          </Link>
           <Link href="#works" className={styles.link} onClick={close}>
             Works
           </Link>
-          <Link href="#comedy" className={styles.link} onClick={close}>
-            Comedy
+          <Link href="#comedy-lab" className={styles.link} onClick={close}>
+            Comedy Lab
           </Link>
           <Link href="#about" className={styles.link} onClick={close}>
             About
           </Link>
-          <Link href="#contact" className={styles.contactBtn} onClick={close}>
+          <a href="mailto:falilv.xc90@gmail.com" className={styles.contactBtn} onClick={close}>
             Contact
-          </Link>
+          </a>
         </div>
 
         <button
